@@ -1,0 +1,2 @@
+import { experience } from '../data/experience'; import { SectionHeading } from './SectionHeading'; import { TimelineItem } from './TimelineItem'
+export function Experience(){return <section id="experience" className="section container"><SectionHeading eyebrow="02 / Experience" title="Built through real-world engineering work." intro="From infrastructure quality to predictive analytics and product interfaces."/><div className="timeline">{experience.map((e,i)=><TimelineItem key={e.company} item={e} index={i}/>)}</div></section>}

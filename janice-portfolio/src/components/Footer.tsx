@@ -1,0 +1,2 @@
+import { Github, Linkedin, ArrowUp } from 'lucide-react'; import { profile } from '../data/profile'
+export function Footer(){return <footer><div className="container footer-inner"><p>© 2026 Janice Benita F. Built with clarity, evidence, and purpose.</p><div><a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><Github/></a><a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin/></a><a href="#top" aria-label="Back to top"><ArrowUp/></a></div></div></footer>}

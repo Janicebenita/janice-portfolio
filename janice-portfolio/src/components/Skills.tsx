@@ -1,0 +1,2 @@
+import { skillGroups } from '../data/skills'; import { SectionHeading } from './SectionHeading'
+export function Skills(){return <section id="skills" className="section container"><SectionHeading eyebrow="05 / Capabilities" title="A practical toolkit for intelligent systems."/><div className="skills-grid">{skillGroups.map((g,i)=><article className="skill-group glass" key={g.title}><span className="group-number">0{i+1}</span><h3>{g.title}</h3><div className="tags">{g.skills.map(s=><span key={s}>{s}</span>)}</div></article>)}</div></section>}

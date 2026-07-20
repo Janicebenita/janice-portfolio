@@ -1,0 +1,2 @@
+import { projects } from '../data/projects'; import { SectionHeading } from './SectionHeading'; import { ProjectCard } from './ProjectCard'
+export function Projects(){return <section id="projects" className="section container"><SectionHeading eyebrow="03 / Selected work" title="Systems designed to make decisions better." intro="Evidence-first reliability, explainable clinical AI, and engineering intelligence."/><div className="projects-grid">{projects.map((p,i)=><ProjectCard project={p} index={i} key={p.title}/>)}</div></section>}
