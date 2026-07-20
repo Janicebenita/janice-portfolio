@@ -42,7 +42,7 @@ Repeated content is typed and stored in `src/data`. Update personal information 
 ## Deployment
 
 - **Vercel:** import the repository. The framework is detected as Vite; output is `dist`. `vercel.json` adds safe response headers.
-- **Render Static Site:** build command `npm install && npm run build`; publish directory `dist`.
+- **Render Static Site:** set Root Directory to `janice-portfolio`, build command to `npm install && npm run build`, and publish directory to `dist`.
 - **Netlify:** build command `npm run build`; publish directory `dist`. No redirect file is needed because this is a one-page site.
 - **GitHub Pages:** enable Pages with “GitHub Actions” as the source. `.github/workflows/deploy.yml` builds with Node 22 and deploys `dist`. The Vite base path is applied only in GitHub Actions.
 
@@ -60,14 +60,13 @@ src/index.css          Design system and responsive styles
 
 ## Known placeholders to replace
 
-- EndoXAI repository URL (`ENDO_XAI_REPO_URL` in `src/data/projects.ts`)
+- EndoXAI repository URL (the interface visibly labels it as pending)
 - Project demo URLs
 - Profile photo (the monogram composition intentionally keeps the current layout complete)
 - Publication DOI / journal links
-- Final resume PDF at `public/resume/Janice_Benita_Resume.pdf`
 - Final custom-domain DNS and hosting configuration
 
-The Resume links currently target the final expected PDF path. Until that PDF is supplied, the repository contains `public/resume/README.txt` with replacement instructions.
+The downloadable resume at `public/resume/Janice_Benita_Resume.pdf` is generated exclusively from the verified profile content used by this site. Replace it only when Janice supplies a newer final resume.
 
 ## Accessibility and performance
 
