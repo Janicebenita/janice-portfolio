@@ -8,7 +8,7 @@ const links = [['about', 'About'], ['experience', 'Experience'], ['projects', 'P
 export function Header() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('')
-  const [light, setLight] = useState(false)
+  const [light, setLight] = useState(true)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
