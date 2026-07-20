@@ -19,6 +19,9 @@ export function Hero(){
     <motion.div className="ai-observatory" initial={{opacity:0,scale:.96,x:20}} animate={{opacity:1,scale:1,x:0}} transition={{duration:.75,delay:.12}} aria-label="Visual representation of Janice's AI engineering focus">
       <div className="observatory-head"><span><BrainCircuit size={16}/> MODEL INTELLIGENCE</span><span className="system-online"><i/> SYSTEM ONLINE</span></div>
       <div className="model-stage">
+        <img className="neural-art" src={assetPath('images/ai-neural-system.webp')} alt="Luminous neural network visualization with flowing data and explainability layers" width="1200" height="800" fetchPriority="high"/>
+        <div className="neural-scan" aria-hidden="true"/>
+        <div className="data-particles" aria-hidden="true">{Array.from({length:12},(_,index)=><i key={index}/>)}</div>
         <div className="model-rings"><i/><i/><i/><div className="brain-core"><BrainCircuit/><span>JB<small>AI / ML</small></span></div></div>
         <div className="model-label label-vision"><ScanSearch/> COMPUTER VISION</div>
         <div className="model-label label-xai"><Sparkles/> EXPLAINABLE AI</div>
