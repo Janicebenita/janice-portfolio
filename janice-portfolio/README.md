@@ -66,7 +66,7 @@ src/index.css          Design system and responsive styles
 - Publication DOI / journal links
 - Final custom-domain DNS and hosting configuration
 
-The downloadable resume at `public/resume/Janice_Benita_Resume.pdf` is generated exclusively from the verified profile content used by this site. Replace it only when Janice supplies a newer final resume.
+The downloadable resume at `public/resume/Janice_Benita_F_resume.pdf` is generated exclusively from the verified profile content used by this site. Replace it only when Janice supplies a newer final resume.
 
 ## Accessibility and performance
 
