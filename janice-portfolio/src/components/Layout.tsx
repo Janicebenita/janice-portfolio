@@ -3,7 +3,7 @@ import { ArrowUpRight, Download, Menu, X } from 'lucide-react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { site } from '../data/site'
 
-const nav = [['/work','Work'],['/research','Research'],['/about','About'],['/resume','Résumé']] as const
+const nav = [['/about','About'],['/work','Work'],['/research','Research'],['/resume','Résumé']] as const
 
 export function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
