@@ -1,20 +1,20 @@
 # Janice Benita F — Portfolio
 
-A production-ready, responsive portfolio for Janice Benita F, an AI/ML Engineer focused on Explainable AI, Computer Vision, AI Agents, and Data Analytics. The site presents experience, selected systems, research, skills, recognition, education, and contact details in a fast static React application.
+A recruiter-focused, multi-route portfolio for AI/ML, applied AI, backend, software-engineering, research, and campus-placement opportunities.
 
-## Features
+## Experience design
 
-- Dark-mode-first premium interface with an optional light theme
-- Responsive navigation with active-section tracking and mobile menu
-- Data-driven projects, experience, publications, skills, awards, and certifications
-- Subtle Framer Motion reveals with reduced-motion support
-- Semantic HTML, visible focus states, keyboard navigation, and strong contrast
-- Open Graph, Twitter, canonical, sitemap, robots, and JSON-LD metadata
-- Static deployment configuration for GitHub Pages, Render, Vercel, and Netlify
+- Editorial, calm visual system with a warm neutral palette and one restrained green accent
+- Compact home-page summary designed for a 10-second recruiter scan
+- Dedicated case studies explaining problem, architecture, decisions, validation, results, limitations, and responsible-use boundaries
+- Separate Work, Research, About, Résumé, and 404 experiences
+- Centralized, strongly typed content in `src/data/site.ts`
+- Browser-viewable, text-selectable ATS résumé with no QR graphics
+- No backend, database, cookies, analytics, or environment variables
 
-## Tech stack
+## Technology
 
-React 19, TypeScript (strict), Vite 7, Framer Motion, Lucide React, and a compact custom CSS design system. The included Tailwind configuration is retained for future extension, while the current UI avoids an unnecessary runtime or build dependency.
+React 19, TypeScript strict mode, Vite, React Router, Lucide React, and a plain CSS design system.
 
 ## Local setup
 
@@ -25,53 +25,54 @@ npm install
 npm run dev
 ```
 
-Quality checks:
+## Validation
 
 ```bash
 npm run lint
+npm run typecheck
+npm test
 npm run build
-npm run preview
 ```
 
-No environment variables, backend, database, or CMS are required.
+The content test verifies required routes, public assets, and the absence of visible placeholder phrases.
 
-## Content customisation
+## Content maintenance
 
-Repeated content is typed and stored in `src/data`. Update personal information in `profile.ts`, projects in `projects.ts`, experience in `experience.ts`, research in `publications.ts`, and capabilities in `skills.ts`. Components live in `src/components`; the visual system is in `src/index.css`.
-
-## Deployment
-
-- **Vercel:** import the repository. The framework is detected as Vite; output is `dist`. `vercel.json` adds safe response headers.
-- **Render Static Site:** set Root Directory to `janice-portfolio`, build command to `npm install && npm run build`, and publish directory to `dist`.
-- **Netlify:** build command `npm run build`; publish directory `dist`. No redirect file is needed because this is a one-page site.
-- **GitHub Pages:** enable Pages with “GitHub Actions” as the source. `.github/workflows/deploy.yml` builds with Node 22 and deploys `dist`. The Vite base path is applied only in GitHub Actions.
-
-For the custom domain, point `janicebenita.dev` to the selected host and add the domain in that provider's dashboard.
-
-## Repository structure
-
-```text
-public/                 Static metadata, imagery, and resume target
-src/components/        Page sections and reusable UI
-src/data/              Typed portfolio content
-src/index.css          Design system and responsive styles
-.github/workflows/     GitHub Pages deployment
-```
-
-## Known placeholders to replace
-
-- EndoXAI repository URL (the interface visibly labels it as pending)
-- Project demo URLs
-- Profile photo (the monogram composition intentionally keeps the current layout complete)
-- Publication DOI / journal links
-- Final custom-domain DNS and hosting configuration
-
-The downloadable resume at `public/resume/Janice_Benita_F_resume.pdf` is generated exclusively from the verified profile content used by this site. Replace it only when Janice supplies a newer final resume.
+- Update personal details, proof points, projects, experience, skills, and publications in `src/data/site.ts`.
+- Add a case study to `caseStudies`; `/work/:slug` renders it automatically.
+- Leave DOI and URL undefined when they are unavailable; no action is rendered.
+- Replace project imagery in `public/images/` and retain meaningful alt text.
+- Regenerate the résumé with `tools/generate_resume.py`. Its public filename is `Janice_Benita_AI_ML_Software_Engineer_Resume.pdf`.
 
 ## Accessibility and performance
 
-The page uses landmarks, a logical heading hierarchy, descriptive alt text, a skip link, explicit focus styling, accessible controls, and `prefers-reduced-motion`. Noncritical project images are lazy-loaded with fixed intrinsic dimensions to reduce layout shift. The site has no remote data calls; the only optional external request is the Google Fonts stylesheet, with system-font fallbacks.
+The site includes semantic landmarks, a skip link, keyboard navigation, visible focus treatment, touch-friendly controls, numbered text diagrams, reduced-motion support, meaningful alt text, lazy-loaded noncritical images, and no autoplay media, trackers, third-party widgets, or backend calls.
 
-## Screenshots
+## Deployment
 
-Add final desktop and mobile screenshots here after the production domain is connected.
+### Vercel
+
+Import the GitHub repository, use `npm run build`, and publish `dist`. `vercel.json` provides SPA rewrites and security headers.
+
+### Render Static Site
+
+- Build command: `npm install && npm run build`
+- Publish directory: `dist`
+- Rewrite `/*` to `/index.html` for clean client-side routes.
+
+### Netlify
+
+Build with `npm run build`, publish `dist`, and configure `/* /index.html 200` if clean routes do not resolve automatically.
+
+### GitHub Pages
+
+Publish `dist`. An SPA fallback or hash routing is required for project routes. Vercel remains recommended for clean case-study URLs.
+
+## Verified content still unavailable
+
+- EndoXAI repository and public demo URLs
+- Digital Quality Intelligence screenshots and publication URL
+- Verified project galleries or product screenshots
+- Final custom-domain DNS for `janicebenita.dev`
+
+Unavailable actions are omitted. No “Coming soon” or “Link pending” text appears publicly.

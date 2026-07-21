@@ -1,2 +1,15 @@
-import { Header } from './components/Header'; import { Hero } from './components/Hero'; import { About } from './components/About'; import { Experience } from './components/Experience'; import { Projects } from './components/Projects'; import { Publications } from './components/Publications'; import { Skills } from './components/Skills'; import { Awards } from './components/Awards'; import { Education } from './components/Education'; import { Contact } from './components/Contact'; import { Footer } from './components/Footer'; import { NeuralBackdrop } from './components/NeuralBackdrop'; import { Highlights } from './components/Highlights'; import { CareerJourney } from './components/CareerJourney'; import { Playground } from './components/Playground'
-export default function App(){return <><NeuralBackdrop/><Header/><main id="main"><Hero/><Highlights/><About/><Experience/><Projects/><Playground/><Publications/><Skills/><Awards/><CareerJourney/><Education/><Contact/></main><Footer/></>}
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { AboutPage, CaseStudyPage, HomePage, NotFoundPage, ResearchPage, ResumePage, WorkPage } from './pages'
+
+export default function App() {
+  return <BrowserRouter><Layout><Routes>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/work" element={<WorkPage />} />
+    <Route path="/work/:slug" element={<CaseStudyPage />} />
+    <Route path="/research" element={<ResearchPage />} />
+    <Route path="/about" element={<AboutPage />} />
+    <Route path="/resume" element={<ResumePage />} />
+    <Route path="*" element={<NotFoundPage />} />
+  </Routes></Layout></BrowserRouter>
+}
